@@ -1,273 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P K Sekhar Reddy — Cloud &amp; DevOps Engineer</title>
-<meta name="description" content="Portfolio of P K Sekhar Reddy, Cloud & DevOps Engineer — infrastructure, automation, and platform reliability.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#151a21;
-    --bg-panel:#1c2229;
-    --bg-panel-raised:#222933;
-    --line:#2c343f;
-    --text:#e7ebf0;
-    --text-dim:#8b96a5;
-    --text-faint:#5c6673;
-    --amber:#e0a84e;
-    --amber-dim:#8a6a37;
-    --teal:#5fb3a8;
-    --red-status:#d9705f;
-    --green-status:#6fbf8b;
-    --mono:'IBM Plex Mono', monospace;
-    --sans:'IBM Plex Sans', sans-serif;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P K Sekhar Reddy — Full-Stack Backend &amp; Cloud Platform Engineer</title>
+  <meta name="description" content="Portfolio of P K Sekhar Reddy — Java Spring Boot REST API Backend, Cloud & Platform Engineer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030712;
+      --card-bg: rgba(15, 23, 42, 0.6);
+      --card-hover: rgba(23, 33, 56, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(96, 165, 250, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-faint: #475569;
+      --accent: #60a5fa;
+      --accent-glow: rgba(96, 165, 250, 0.15);
+      --emerald: #34d399;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
 
-  /* subtle grid texture */
-  .bg-grid{
-    position:fixed; inset:0; z-index:-1;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size:64px 64px;
-    opacity:0.18;
-    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
-  }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* ---------- NAV ---------- */
-  header{
-    position:sticky; top:0; z-index:20;
-    background:rgba(21,26,33,0.88);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 28px; max-width:1040px; margin:0 auto;
-  }
-  .brand{
-    font-family:var(--mono); font-weight:600; font-size:14px; letter-spacing:0.02em;
-    display:flex; align-items:center; gap:8px;
-  }
-  .brand .dot{width:8px; height:8px; border-radius:50%; background:var(--green-status); box-shadow:0 0 8px var(--green-status);}
-  .nav-links{display:flex; gap:28px; font-family:var(--mono); font-size:13px; color:var(--text-dim);}
-  .nav-links a:hover{color:var(--amber);}
-  .nav-toggle{display:none;}
-  @media(max-width:720px){
-    .nav-links{display:none;}
-    .hero-flex{flex-direction:column-reverse; gap:32px; align-items:center; text-align:center;}
-    .eyebrow{justify-content:center;}
-    h1{margin:0 auto;}
-    .role-line{margin-left:auto; margin-right:auto;}
-    .profile-img{width:160px; height:160px;}
-  }
+    .bg-canvas {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 100% 50%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    }
 
-  /* ---------- HERO ---------- */
-  .hero{padding:72px 0 40px;}
-  .hero-flex{display:flex; align-items:flex-start; justify-content:space-between; gap:48px; margin-bottom:12px;}
-  .hero-img-wrap{flex-shrink:0;}
-  .profile-img{
-    width:200px; height:200px; border-radius:10px; object-fit:cover;
-    border:1px solid var(--line);
-    background:var(--bg-panel);
-  }
-  .eyebrow{
-    font-family:var(--mono); font-size:12px; color:var(--teal);
-    letter-spacing:0.12em; text-transform:uppercase; margin-bottom:18px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{content:"//"; color:var(--text-faint);}
-  h1{
-    font-family:var(--sans); font-weight:700; font-size:clamp(34px,5.5vw,58px);
-    line-height:1.08; letter-spacing:-0.02em; max-width:15ch;
-  }
-  .role-line{
-    font-family:var(--mono); color:var(--text-dim); font-size:clamp(15px,2vw,19px);
-    margin-top:16px; max-width:52ch;
-  }
-  .role-line .amber{color:var(--amber);}
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
-  /* status panel — the signature element */
-  .status-panel{
-    margin-top:44px;
-    border:1px solid var(--line);
-    background:var(--bg-panel);
-    border-radius:6px;
-    overflow:hidden;
-  }
-  .status-panel-head{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:12px 18px; border-bottom:1px solid var(--line);
-    font-family:var(--mono); font-size:12px; color:var(--text-dim);
-  }
-  .status-panel-head .status-pill{
-    display:flex; align-items:center; gap:7px;
-    color:var(--green-status); font-weight:600;
-  }
-  .status-panel-head .status-pill .dot{width:7px; height:7px; border-radius:50%; background:var(--green-status); box-shadow:0 0 6px var(--green-status);}
-  .metric-grid{
-    display:grid; grid-template-columns:repeat(4,1fr);
-  }
-  .metric{
-    padding:22px 18px; border-right:1px solid var(--line);
-  }
-  .metric:last-child{border-right:none;}
-  .metric-val{
-    font-family:var(--mono); font-weight:700; font-size:clamp(20px,3vw,28px); color:var(--text);
-  }
-  .metric-val .accent{color:var(--amber);}
-  .metric-label{
-    font-family:var(--mono); font-size:11px; color:var(--text-faint);
-    margin-top:6px; text-transform:uppercase; letter-spacing:0.06em;
-  }
-  @media(max-width:720px){
-    .metric-grid{grid-template-columns:repeat(2,1fr);}
-    .metric:nth-child(2){border-right:none;}
-  }
+    /* ---------- HEADER ---------- */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(3, 7, 18, 0.8);
+      border-bottom: 1px solid var(--card-border);
+    }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px; max-width: 1140px; margin: 0 auto; padding: 0 24px;
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 700; letter-spacing: 0.04em;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .live-indicator {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 9999px;
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      font-family: var(--font-mono); font-size: 11px; color: var(--emerald); font-weight: 500;
+    }
+    .pulse-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+    }
+    .nav-links { display: flex; gap: 28px; font-family: var(--font-mono); font-size: 13px; }
+    .nav-links a { color: var(--text-muted); transition: color 0.2s ease; text-decoration: none; }
+    .nav-links a:hover { color: var(--text-main); }
 
-  /* ---------- SECTIONS ---------- */
-  section{padding:76px 0;}
-  .section-head{
-    display:flex; align-items:baseline; gap:14px; margin-bottom:36px;
-  }
-  .section-tag{
-    font-family:var(--mono); font-size:12px; color:var(--text-faint);
-  }
-  h2{
-    font-family:var(--sans); font-weight:700; font-size:clamp(22px,3vw,30px);
-    letter-spacing:-0.01em;
-  }
-  .rule{flex:1; height:1px; background:var(--line);}
+    /* ---------- HERO ---------- */
+    .hero { padding: 80px 0 40px; }
+    .hero-layout {
+      display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 40px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 12px; color: var(--accent);
+      padding: 6px 12px; border-radius: 6px;
+      background: var(--accent-glow); border: 1px solid rgba(96, 165, 250, 0.3);
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-family: var(--font-display); font-size: clamp(36px, 5vw, 58px);
+      font-weight: 700; line-height: 1.12; letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-bio {
+      font-size: clamp(15px, 1.8vw, 16.5px); color: var(--text-muted);
+      max-width: 54ch; line-height: 1.7; margin-bottom: 28px;
+    }
+    .hero-bio span { color: var(--text-main); font-weight: 600; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
-  /* about */
-  .about-body{max-width:70ch; color:var(--text-dim); font-size:16px;}
-  .about-body p + p{margin-top:14px;}
-  .about-body strong{color:var(--text); font-weight:600;}
+    .profile-frame {
+      position: relative; justify-self: center;
+      padding: 10px; border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), transparent);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    .profile-img {
+      width: 220px; height: 220px; border-radius: 16px; object-fit: cover; display: block;
+    }
 
-  /* experience */
-  .exp-card{
-    border:1px solid var(--line); background:var(--bg-panel);
-    border-radius:6px; padding:28px;
-  }
-  .exp-head{
-    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px;
-    margin-bottom:6px;
-  }
-  .exp-title{font-weight:700; font-size:19px;}
-  .exp-dates{font-family:var(--mono); font-size:12px; color:var(--teal);}
-  .exp-org{color:var(--text-dim); font-size:14px; margin-bottom:20px;}
-  .exp-list{list-style:none;}
-  .exp-list li{
-    position:relative; padding-left:20px; margin-bottom:11px;
-    color:var(--text-dim); font-size:15px;
-  }
-  .exp-list li::before{
-    content:"›"; position:absolute; left:0; color:var(--amber); font-family:var(--mono); font-weight:700;
-  }
-  .exp-list li strong{color:var(--text); font-weight:600;}
-  .migration-note{
-    margin-top:22px; padding:16px 18px; background:var(--bg-panel-raised);
-    border-left:2px solid var(--teal); border-radius:0 4px 4px 0;
-    font-family:var(--mono); font-size:13px; color:var(--text-dim); line-height:1.7;
-  }
-  .migration-note .step-label{color:var(--teal);}
+    /* ---------- METRICS ---------- */
+    .bento-metrics {
+      margin-top: 44px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    }
+    .metric-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 22px 18px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .metric-card:hover {
+      border-color: var(--card-hover-border); transform: translateY(-2px);
+      background: var(--card-hover);
+    }
+    .metric-num {
+      font-family: var(--font-display); font-size: 30px; font-weight: 700; color: #fff;
+      margin-bottom: 4px;
+    }
+    .metric-num .highlight { color: var(--accent); }
+    .metric-sub {
+      font-family: var(--font-mono); font-size: 11.5px; color: var(--text-muted); line-height: 1.4;
+    }
 
-  /* projects */
-  .project-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:20px;
-  }
-  @media(max-width:720px){.project-grid{grid-template-columns:1fr;}}
-  .project-card{
-    border:1px solid var(--line); background:var(--bg-panel);
-    border-radius:6px; padding:24px;
-    transition:border-color 0.2s ease, transform 0.2s ease;
-  }
-  .project-card:hover{border-color:var(--amber-dim); transform:translateY(-2px);}
-  .project-name{font-weight:700; font-size:17px; margin-bottom:4px;}
-  .project-tagline{font-family:var(--mono); font-size:12px; color:var(--teal); margin-bottom:14px;}
-  .project-desc{color:var(--text-dim); font-size:14.5px; margin-bottom:14px;}
-  .tag-row{display:flex; flex-wrap:wrap; gap:6px;}
-  .tag{
-    font-family:var(--mono); font-size:11px; color:var(--text-dim);
-    border:1px solid var(--line); padding:3px 8px; border-radius:3px;
-  }
-  .project-link{
-    display:inline-block; margin-top:14px; font-family:var(--mono); font-size:12.5px; color:var(--amber);
-  }
-  .project-link:hover{text-decoration:underline;}
+    /* ---------- SECTION LAYOUTS ---------- */
+    section { padding: 64px 0; scroll-margin-top: 60px; }
+    .section-header {
+      display: flex; align-items: baseline; gap: 14px; margin-bottom: 28px;
+    }
+    .section-num { font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
+    h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); font-weight: 700; }
+    .section-line { flex: 1; height: 1px; background: var(--card-border); }
 
-  /* skills */
-  .skills-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-    background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;
-  }
-  @media(max-width:720px){.skills-grid{grid-template-columns:1fr 1fr;}}
-  @media(max-width:480px){.skills-grid{grid-template-columns:1fr;}}
-  .skill-cell{background:var(--bg-panel); padding:20px;}
-  .skill-cat{
-    font-family:var(--mono); font-size:11px; color:var(--amber);
-    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;
-  }
-  .skill-items{color:var(--text-dim); font-size:13.5px; line-height:1.8;}
+    .bento-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 20px; padding: 32px; backdrop-filter: blur(12px);
+    }
 
-  /* education */
-  .edu-row{
-    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;
-    border:1px solid var(--line); background:var(--bg-panel); border-radius:6px; padding:22px 26px;
-  }
-  .edu-name{font-weight:700; font-size:16px;}
-  .edu-sub{color:var(--text-dim); font-size:13.5px; margin-top:4px;}
-  .edu-dates{font-family:var(--mono); font-size:12px; color:var(--teal);}
+    /* Experience Card */
+    .exp-title-row {
+      display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 6px;
+    }
+    .exp-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; }
+    .exp-time {
+      font-family: var(--font-mono); font-size: 12px; color: var(--accent);
+      background: var(--accent-glow); padding: 4px 10px; border-radius: 6px;
+    }
+    .exp-place { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+    .exp-points { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .exp-points li {
+      position: relative; padding-left: 20px; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;
+    }
+    .exp-points li::before {
+      content: "→"; position: absolute; left: 0; color: var(--accent); font-family: var(--font-mono);
+    }
+    .exp-points li strong { color: var(--text-main); font-weight: 600; }
 
-  /* contact */
-  .contact-panel{
-    border:1px solid var(--line); background:var(--bg-panel);
-    border-radius:6px; padding:40px; text-align:center;
-  }
-  .contact-panel h2{margin-bottom:10px;}
-  .contact-panel p{color:var(--text-dim); max-width:48ch; margin:0 auto 26px;}
-  .contact-links{display:flex; justify-content:center; gap:16px; flex-wrap:wrap;}
-  .contact-btn{
-    font-family:var(--mono); font-size:13px; padding:11px 20px;
-    border:1px solid var(--line); border-radius:5px; color:var(--text);
-    transition:border-color 0.2s ease, color 0.2s ease;
-  }
-  .contact-btn:hover{border-color:var(--amber); color:var(--amber);}
-  .contact-btn.primary{background:var(--amber); color:#151a21; border-color:var(--amber); font-weight:600;}
-  .contact-btn.primary:hover{opacity:0.9; color:#151a21;}
+    /* Terminal Simulation Box */
+    .terminal-box {
+      margin-top: 24px; background: rgba(3, 7, 18, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; overflow: hidden;
+    }
+    .terminal-head {
+      background: rgba(255, 255, 255, 0.03); padding: 10px 16px;
+      display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .t-dot { width: 10px; height: 10px; border-radius: 50%; background: #334155; }
+    .t-title { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-muted); margin-left: 6px; }
+    .terminal-body {
+      padding: 16px 20px; font-family: var(--font-mono); font-size: 12.5px; color: var(--text-muted); line-height: 1.8;
+    }
+    .step-tag { color: var(--accent); }
 
-  footer{
-    padding:32px 0; border-top:1px solid var(--line);
-    text-align:center; font-family:var(--mono); font-size:12px; color:var(--text-faint);
-  }
+    /* Projects Grid */
+    .project-bento {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+    }
+    .proj-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 18px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .proj-card:hover {
+      border-color: var(--card-hover-border); transform: translateY(-3px);
+      background: var(--card-hover);
+    }
+    .proj-name { font-family: var(--font-display); font-size: 19px; font-weight: 700; margin-bottom: 4px; }
+    .proj-tagline { font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 12px; }
+    .proj-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px; }
+    .p-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .p-tag {
+      font-family: var(--font-mono); font-size: 11px; color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3px 9px; border-radius: 6px;
+    }
 
-  ::selection{background:var(--amber); color:#151a21;}
+    /* Skills Grid */
+    .skills-bento {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .skill-card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 14px; padding: 22px; transition: border-color 0.2s ease;
+    }
+    .skill-card:hover { border-color: var(--card-hover-border); }
+    .skill-head {
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 600;
+      color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;
+    }
+    .skill-body { font-size: 13.5px; color: var(--text-muted); line-height: 1.7; }
 
-  @media (prefers-reduced-motion: reduce){
-    *{transition:none !important; scroll-behavior:auto !important;}
-  }
-</style>
+    /* Buttons */
+    .btn {
+      font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+      padding: 12px 22px; border-radius: 8px; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: #ffffff; color: #030712; font-weight: 600;
+    }
+    .btn-primary:hover { background: #e2e8f0; transform: translateY(-2px); }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04); color: var(--text-main);
+      border: 1px solid var(--card-border);
+    }
+    .btn-secondary:hover { border-color: var(--text-muted); transform: translateY(-2px); }
+
+    .contact-bento {
+      text-align: center; padding: 48px 28px;
+      background: linear-gradient(180deg, var(--card-bg) 0%, rgba(96, 165, 250, 0.03) 100%);
+      border: 1px solid var(--card-border); border-radius: 20px;
+    }
+    .contact-bento h2 { margin-bottom: 12px; }
+    .contact-bento p { color: var(--text-muted); max-width: 48ch; margin: 0 auto 28px; font-size: 15.5px; }
+
+    footer {
+      padding: 36px 0; border-top: 1px solid var(--card-border);
+      text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint);
+    }
+
+    @media (max-width: 840px) {
+      .hero-layout { grid-template-columns: 1fr; text-align: center; }
+      .hero-bio { margin: 0 auto 24px; }
+      .hero-cta { justify-content: center; }
+      .bento-metrics { grid-template-columns: repeat(2, 1fr); }
+      .project-bento { grid-template-columns: 1fr; }
+      .skills-bento { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .nav-links { display: none; }
+      .bento-metrics { grid-template-columns: 1fr; }
+      .skills-bento { grid-template-columns: 1fr; }
+      .profile-img { width: 170px; height: 170px; }
+    }
+  </style>
 </head>
 <body>
-<div class="bg-grid"></div>
+
+<div class="bg-canvas"></div>
 
 <header>
   <nav>
-    <div class="brand"><span class="dot"></span>P K SEKHAR REDDY CHINTA</div>
+    <div class="brand">
+      <span>P K SEKHAR REDDY</span>
+      <div class="live-indicator"><span class="pulse-dot"></span>AVAILABLE</div>
+    </div>
     <div class="nav-links">
       <a href="#about">about</a>
       <a href="#experience">experience</a>
@@ -278,224 +298,267 @@
   </nav>
 </header>
 
-<main class="wrap">
+<main class="container">
 
   <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-flex">
-      <div class="hero-main">
-        <div class="eyebrow">cloud &amp; devops engineer</div>
-        <h1>P K Sekhar Reddy</h1>
-        <p class="role-line">Sole engineer owning infrastructure, cloud, and reliability across <span class="amber">4 production platforms</span> — EV charging, travel, and fintech.</p>
+  <section class="hero">
+    <div class="hero-layout">
+      <div>
+        <div class="hero-badge">Java Spring Boot Backend · Cloud &amp; DevOps Engineer</div>
+        <h1>Architecting <span class="gradient-text">high-scale REST APIs</span> &amp; resilient cloud systems.</h1>
+        <p class="hero-bio">
+          Sole engineer driving <span>Java/Spring Boot REST API development, Razorpay payment processing, and hybrid cloud infrastructure</span> across <span>4 live production platforms</span> — EV charging, travel, and fintech domains.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="P_K_Sekhar_Reddy_Resume.pdf" download="P_K_Sekhar_Reddy_Resume.pdf">Download Resume 📄</a>
+          <a class="btn btn-secondary" href="mailto:pksekharreddychinta@gmail.com">Email Me Directly</a>
+          <a class="btn btn-secondary" href="https://github.com/pksekharreddychinta" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/p-k-sekhar-reddy-chinta/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
       </div>
-      <div class="hero-img-wrap">
+      <div class="profile-frame">
         <img src="PKSEKHARREDDY.png" alt="P K Sekhar Reddy" class="profile-img">
       </div>
     </div>
 
-    <div class="status-panel">
-      <div class="status-panel-head">
-        <span>infra_status.log</span>
-        <span class="status-pill"><span class="dot"></span>OPERATIONAL</span>
+    <!-- METRICS HUD -->
+    <div class="bento-metrics">
+      <div class="metric-card">
+        <div class="metric-num">200<span class="highlight">ms</span></div>
+        <div class="metric-sub">API Response Time<br>Optimized from 700ms (DTO/Redis)</div>
       </div>
-      <div class="metric-grid">
-        <div class="metric">
-          <div class="metric-val"><span class="accent">83%</span></div>
-          <div class="metric-label">AWS cost cut<br>$1,200 → $200/mo</div>
-        </div>
-        <div class="metric">
-          <div class="metric-val">99.9<span class="accent">%</span></div>
-          <div class="metric-label">uptime maintained<br>across all platforms</div>
-        </div>
-        <div class="metric">
-          <div class="metric-val">700 → <span class="accent">200</span>ms</div>
-          <div class="metric-label">API response time<br>optimized</div>
-        </div>
-        <div class="metric">
-          <div class="metric-val"><span class="accent">-60%</span></div>
-          <div class="metric-label">deploy cycle time<br>via Jenkins CI/CD</div>
-        </div>
+      <div class="metric-card">
+        <div class="metric-num">83<span class="highlight">%</span></div>
+        <div class="metric-sub">AWS Spend Cut<br>$1,200 → $200/mo Hybrid Model</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">99.9<span class="highlight">%</span></div>
+        <div class="metric-sub">Production Uptime<br>Health Checks &amp; Auto-Healing</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">-60<span class="highlight">%</span></div>
+        <div class="metric-sub">CI/CD Deploy Time<br>Jenkins Master-Slave + Maven</div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="section-head">
-      <span class="section-tag">01</span>
+    <div class="section-header">
+      <span class="section-num">01</span>
       <h2>About</h2>
-      <div class="rule"></div>
+      <div class="section-line"></div>
     </div>
-    <div class="about-body">
-      <p>I'm a Cloud &amp; DevOps engineer based in Hyderabad with about <strong>2.5 years of experience</strong>, most recently at Greatpelican Digital Systems — where I was promoted from intern to full-time engineer within four months and went on to own the entire infrastructure, cloud, and DevOps function solo across four live production platforms.</p>
-      <p>My work centers on building systems that stay up, cost less, and deploy faster: migrating infrastructure between providers without downtime, building monitoring that catches problems before users do, and automating the deployment pipeline so releases stop being an event.</p>
-      <p>I hold a B.Tech in Computer Science Engineering from SRKR Engineering College (JNTUK), and I'm currently expanding into Python to round out a Java-first backend background.</p>
+    <div class="bento-card">
+      <p style="color: var(--text-muted); font-size: 15.5px; line-height: 1.8; margin-bottom: 14px;">
+        I am a Software Engineer based in Hyderabad with <strong style="color:#fff;">2.5+ years of experience</strong>. Promoted from intern to full-time engineer within four months at Greatpelican Digital Systems, I operate at the intersection of <strong style="color:#fff;">Java Spring Boot Backend Engineering</strong> and <strong style="color:#fff;">Cloud &amp; DevOps Infrastructure Ownership</strong>.
+      </p>
+      <p style="color: var(--text-muted); font-size: 15.5px; line-height: 1.8;">
+        My primary engineering focus is designing robust, production-scale RESTful APIs with Maven, Spring Boot, and PostgreSQL, integrating resilient real-money payment gateways (Razorpay), handling WebSocket telemetry (OCPP 1.6J), and pairing it with zero-downtime hybrid cloud deployments (AWS, Vultr, Docker on-prem, Cloudflare Tunnels).
+      </p>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="section-head">
-      <span class="section-tag">02</span>
+    <div class="section-header">
+      <span class="section-num">02</span>
       <h2>Experience</h2>
-      <div class="rule"></div>
+      <div class="section-line"></div>
     </div>
-
-    <div class="exp-card">
-      <div class="exp-head">
-        <span class="exp-title">Software Engineer — Cloud &amp; DevOps Focus</span>
-        <span class="exp-dates">APR 2024 — JUL 2026</span>
+    <div class="bento-card">
+      <div class="exp-title-row">
+        <span class="exp-title">Software Engineer — Java Backend, Cloud &amp; DevOps</span>
+        <span class="exp-time">APR 2024 — JUL 2026</span>
       </div>
-      <div class="exp-org">Greatpelican Digital Systems, Hyderabad · (Intern, Jan–Mar 2024)</div>
-      <ul class="exp-list">
-        <li>Sole owner of infrastructure, cloud, and DevOps across <strong>4 production platforms</strong> spanning EV charging, travel, and fintech domains — collaborating with one backend engineer on API development.</li>
-        <li>Cut AWS infrastructure spend by <strong>83%</strong> ($1,200 → $200/mo) by redesigning a fully-cloud architecture into a hybrid on-prem model, plus a further <strong>$300/mo</strong> saved migrating from Confluent Kafka to self-hosted Apache Kafka.</li>
-        <li>Maintained <strong>99.9%+ uptime</strong> in production using self-healing scripts, CloudWatch alerting, and Spring Boot Actuator health checks.</li>
-        <li>Built a <strong>Jenkins master-slave CI/CD pipeline</strong> with GitHub webhooks, cutting deployment cycle time by roughly <strong>60%</strong>.</li>
-        <li>Optimized backend API response times from <strong>700ms to under 200ms</strong>.</li>
-        <li>Implemented <strong>OCPP 1.6J over WebSockets</strong> for real-time EV charging station communication.</li>
-        <li>Migrated production PostgreSQL off AWS RDS to a self-hosted, Dockerized on-prem instance with automated Docker-volume backups to S3.</li>
-        <li>Stood up full observability with <strong>Grafana, Prometheus, node exporter, and Blackbox exporter</strong> across CPU, container, and on-prem server metrics.</li>
+      <div class="exp-place">Greatpelican Digital Systems, Hyderabad · (Intern, Jan–Mar 2024)</div>
+      <ul class="exp-points">
+        <li><strong>Backend &amp; REST API Development:</strong> Designed, built, and optimized Java Spring Boot RESTful microservices for EV charging session management, travel expense tracking, and payment processing.</li>
+        <li><strong>API Latency Optimization:</strong> Slashed API response times from <strong>~700ms to under 200ms</strong> using Redis caching, DTO projections, and GZIP response compression.</li>
+        <li><strong>Payment &amp; Financial Logic:</strong> Integrated Razorpay end-to-end for one-time payments, recurring subscriptions, webhook event processing, dynamic GST/tax computation, and partner revenue-share splits.</li>
+        <li><strong>Real-Time Protocols &amp; Streaming:</strong> Implemented <strong>OCPP 1.6J over WebSockets</strong> for EV station commands (Remote Start/Stop, live metrics) and migrated from Confluent to self-hosted <strong>Apache Kafka</strong> ($300/mo saved).</li>
+        <li><strong>Hybrid Infrastructure Ownership:</strong> Cut AWS costs by <strong>83%</strong> ($1,200 → $200/mo) by designing a hybrid on-prem (HP Z1 Tower) + Cloudflare Zero-Trust Tunnel architecture running uninterrupted in production.</li>
+        <li><strong>CI/CD &amp; Observability:</strong> Built Jenkins master-slave automated build-test-deploy pipelines with Maven and GitHub webhooks (cutting deployment time by 60%), instrumented with Grafana, Prometheus, cAdvisor, and Spring Boot Actuator.</li>
       </ul>
 
-      <div class="migration-note">
-        <span class="step-label">$ infra --migration-history</span><br>
-        <span class="step-label">[1]</span> one EC2 instance per application (fully cloud)<br>
-        <span class="step-label">[2]</span> Dockerized on-prem (Z1 Tower) → AutoSSH reverse tunnel → single EC2 Nginx gateway, ALB + Route 53<br>
-        <span class="step-label">[3]</span> gateway server moved AWS EC2 → Vultr, AutoSSH retained<br>
-        <span class="step-label">[4]</span> AutoSSH replaced with Cloudflare Tunnel; DNS moved to Cloudflare; Cognito + SES retained on AWS
+      <div class="terminal-box">
+        <div class="terminal-head">
+          <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
+          <span class="t-title">hybrid-infrastructure-evolution.sh</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="step-tag">[phase-1]</span> 6 standalone EC2 instances per app (100% cloud, $1,200/mo AWS spend)</div>
+          <div><span class="step-tag">[phase-2]</span> Dockerized on-prem (HP Z1 Tower) → AutoSSH reverse tunnel → single EC2 Nginx gateway</div>
+          <div><span class="step-tag">[phase-3]</span> Reverse proxy gateway migrated AWS EC2 → Vultr; PostgreSQL moved off RDS to Docker volume on-prem</div>
+          <div><span class="step-tag">[phase-4]</span> AutoSSH replaced with Cloudflare Zero-Trust Tunnel (cloudflared); AWS footprint minimized to Cognito + SES ($200/mo)</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-head">
-      <span class="section-tag">03</span>
-      <h2>Projects</h2>
-      <div class="rule"></div>
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Production Platforms &amp; Projects</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="project-bento">
+      
+      <!-- Chargebird -->
+      <div class="proj-card">
+        <div>
+          <div class="proj-name">Chargebird</div>
+          <div class="proj-tagline">EV Charging &amp; Payments Platform</div>
+          <p class="proj-desc">Designed Spring Boot REST APIs handling charging session workflows, Razorpay payment processing (one-time &amp; recurring), automated GST computation, and RSA asymmetric payload signing.</p>
+        </div>
+        <div class="p-tags">
+          <span class="p-tag">Java</span><span class="p-tag">Spring Boot</span><span class="p-tag">Razorpay API</span><span class="p-tag">PostgreSQL</span><span class="p-tag">RSA Auth</span>
+        </div>
+      </div>
+
+      <!-- CSMS / CMS -->
+      <div class="proj-card">
+        <div>
+          <div class="proj-name">CSMS / CMS</div>
+          <div class="proj-tagline">Charging Station Management System</div>
+          <p class="proj-desc">Implemented real-time bidirectional WebSocket communication using OCPP 1.6J (Remote Start/Stop, Smart Charging Profiles) and decoupled event pipelines with self-hosted Apache Kafka.</p>
+        </div>
+        <div class="p-tags">
+          <span class="p-tag">Java</span><span class="p-tag">OCPP 1.6J</span><span class="p-tag">WebSockets</span><span class="p-tag">Apache Kafka</span><span class="p-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- Sandesh -->
+      <div class="proj-card">
+        <div>
+          <div class="proj-name">Sandesh</div>
+          <div class="proj-tagline">Transactional Notification Microservice</div>
+          <p class="proj-desc">Standalone Java Spring Boot email microservice servicing all 4 production apps with template-driven REST endpoints, primary SMTP via JavaMail, and AWS SES failover.</p>
+        </div>
+        <div class="p-tags">
+          <span class="p-tag">Spring Boot</span><span class="p-tag">REST API</span><span class="p-tag">JavaMail</span><span class="p-tag">AWS SES</span><span class="p-tag">Microservice</span>
+        </div>
+      </div>
+
+      <!-- Voyli -->
+      <div class="proj-card">
+        <div>
+          <div class="proj-name">Voyli</div>
+          <div class="proj-tagline">Corporate Travel &amp; Expense Engine</div>
+          <p class="proj-desc">Engineered backend APIs for corporate travel booking and multi-currency expense approvals, backed by AWS Cognito JWT security and S3 Transfer Acceleration.</p>
+        </div>
+        <div class="p-tags">
+          <span class="p-tag">Spring Boot</span><span class="p-tag">AWS Cognito</span><span class="p-tag">S3 Acceleration</span><span class="p-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- OCPI -->
+      <div class="proj-card">
+        <div>
+          <div class="proj-name">OCPI Roaming Integration</div>
+          <div class="proj-tagline">EV Interoperability Protocol (In Active Progress)</div>
+          <p class="proj-desc">Building standalone Open Charge Point Interface (OCPI) REST modules to enable roaming between CPO networks and external e-Mobility Service Providers (EMSPs).</p>
+        </div>
+        <div class="p-tags">
+          <span class="p-tag">Java</span><span class="p-tag">OCPI Protocol</span><span class="p-tag">REST API</span><span class="p-tag">Microservices</span>
+        </div>
+      </div>
+
+      <!-- Hybrid Cloud Infra -->
+      <div class="proj-card">
+        <div>
+          <div class="proj-name">Hybrid On-Prem &amp; Multi-Cloud</div>
+          <div class="proj-tagline">Enterprise Platform Reliability</div>
+          <p class="proj-desc">Engineered zero-trust Dockerized on-prem infrastructure using Cloudflare Tunnels, self-hosted PostgreSQL S3 backups, and multi-cloud routing across AWS and Vultr.</p>
+        </div>
+        <div class="p-tags">
+          <span class="p-tag">Docker</span><span class="p-tag">Cloudflare Tunnel</span><span class="p-tag">AWS ECS/EC2</span><span class="p-tag">Vultr</span>
+        </div>
+      </div>
+
     </div>
 
-    <div class="project-grid">
-      <div class="project-card">
-        <div class="project-name">Chargebird</div>
-        <div class="project-tagline">EV charging &amp; payments platform</div>
-        <p class="project-desc">Consumer-facing EV charging platform with Razorpay payment integration and revenue-sharing / GST calculation logic for station partners.</p>
-        <div class="tag-row"><span class="tag">Spring Boot</span><span class="tag">Razorpay API</span><span class="tag">PostgreSQL</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-name">CSMS</div>
-        <div class="project-tagline">Charging Station Management System</div>
-        <p class="project-desc">Manages real-time communication with EV charging stations over OCPP 1.6J via WebSockets, with Kafka handling event streaming between services.</p>
-        <div class="tag-row"><span class="tag">OCPP 1.6J</span><span class="tag">Kafka</span><span class="tag">WebSockets</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-name">Sandesh</div>
-        <div class="project-tagline">Internal transactional email service</div>
-        <p class="project-desc">Shared microservice handling transactional email for all four production platforms, built on JavaMail and AWS SES.</p>
-        <div class="tag-row"><span class="tag">JavaMail</span><span class="tag">AWS SES</span><span class="tag">Microservice</span></div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-name">Voyli</div>
-        <div class="project-tagline">Travel &amp; expense management</div>
-        <p class="project-desc">Platform for managing corporate travel bookings and expense workflows, backed by the same shared infra and monitoring stack.</p>
-        <div class="tag-row"><span class="tag">Spring Boot</span><span class="tag">AWS Cognito</span><span class="tag">PostgreSQL</span></div>
-      </div>
-    </div>
-
-    <div style="margin-top:20px;">
-      <a class="project-link" href="https://www.youtube.com/watch?v=5jgqN_COWrc" target="_blank" rel="noopener">▶ watch: how to charge an EV car — YouTube walkthrough</a>
+    <div style="margin-top: 20px; text-align: center;">
+      <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=5jgqN_COWrc" target="_blank" rel="noopener">
+        ▶ Watch EV Charging System Walkthrough on YouTube ↗
+      </a>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS ARSENAL -->
   <section id="skills">
-    <div class="section-head">
-      <span class="section-tag">04</span>
-      <h2>Skills</h2>
-      <div class="rule"></div>
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Technical Arsenal</h2>
+      <div class="section-line"></div>
     </div>
-
-    <div class="skills-grid">
-      <div class="skill-cell">
-        <div class="skill-cat">Cloud &amp; Infra</div>
-        <div class="skill-items">AWS (EC2, EBS, VPC, Route 53, ALB, S3, ECS/EKS, Lambda, WAF, Cognito)<br>Vultr (Instances, LB, Block Storage, VPC)</div>
+    <div class="skills-bento">
+      <div class="skill-card">
+        <div class="skill-head">Backend &amp; REST APIs</div>
+        <div class="skill-body">Java, Spring Boot, Spring Security, REST API Design, Maven, Microservices, DTO Projections, WebSockets, Node.js</div>
       </div>
-      <div class="skill-cell">
-        <div class="skill-cat">IaC &amp; Automation</div>
-        <div class="skill-items">Terraform, Ansible, HashiCorp Vault</div>
+      <div class="skill-card">
+        <div class="skill-head">Cloud &amp; Multi-Cloud</div>
+        <div class="skill-body">AWS (EC2, ECS Fargate/EC2, ECR, S3, RDS, ALB, Route 53, CloudWatch, IAM, ACM, WAF, Cognito, SES, SNS) &amp; Vultr</div>
       </div>
-      <div class="skill-cell">
-        <div class="skill-cat">CI/CD</div>
-        <div class="skill-items">Jenkins (master-slave), GitLab CI, GitHub Actions &amp; Webhooks</div>
+      <div class="skill-card">
+        <div class="skill-head">Fintech, Protocols &amp; Security</div>
+        <div class="skill-body">Razorpay Payments API, OCPP 1.6J, OCPI, RSA Asymmetric Signing, OAuth 2.0 / JWT, HashiCorp Vault</div>
       </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Containers</div>
-        <div class="skill-items">Docker, Portainer</div>
+      <div class="skill-card">
+        <div class="skill-head">Streaming, Caching &amp; Queues</div>
+        <div class="skill-body">Apache Kafka (Self-Hosted Topic Management), Confluent Migration, Redis (Containerized Caching), AWS SNS</div>
       </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Monitoring</div>
-        <div class="skill-items">Grafana, Prometheus, node/Blackbox exporter, CloudWatch</div>
+      <div class="skill-card">
+        <div class="skill-head">Databases &amp; Storage</div>
+        <div class="skill-body">PostgreSQL (Dockerized On-Prem &amp; AWS RDS), MySQL, MongoDB, Redis, Schema Design, S3 Disaster Recovery</div>
       </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Messaging</div>
-        <div class="skill-items">Apache Kafka (self-hosted &amp; Confluent)</div>
+      <div class="skill-card">
+        <div class="skill-head">IaC &amp; CI/CD Automation</div>
+        <div class="skill-body">Terraform, Ansible, Jenkins (Master-Slave Pipelines), GitHub Actions &amp; Webhooks, GitLab, Shell/PowerShell</div>
       </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Databases</div>
-        <div class="skill-items">PostgreSQL, MongoDB, Redis</div>
+      <div class="skill-card">
+        <div class="skill-head">Containers &amp; Networking</div>
+        <div class="skill-body">Docker, Portainer, Cloudflare Zero-Trust Tunnel, Nginx Reverse Proxy, AutoSSH, Zero-Trust Architecture</div>
       </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Backend</div>
-        <div class="skill-items">Java, Spring Boot, Spring Security, Maven, Node.js</div>
+      <div class="skill-card">
+        <div class="skill-head">Observability &amp; Metrics</div>
+        <div class="skill-body">Grafana, Prometheus, cAdvisor, Node Exporter, Blackbox Exporter, Spring Boot Actuator, AWS CloudWatch</div>
       </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Security</div>
-        <div class="skill-items">OAuth 2.0 / JWT, RSA asymmetric encryption</div>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Networking</div>
-        <div class="skill-items">Cloudflare Tunnel, Nginx, AutoSSH reverse tunneling</div>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Payments</div>
-        <div class="skill-items">Razorpay Payments API</div>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-cat">Also</div>
-        <div class="skill-items">PowerShell, Windows environments, AWS SNS</div>
+      <div class="skill-card">
+        <div class="skill-head">Systems &amp; Tooling</div>
+        <div class="skill-body">Linux (Ubuntu Server), Windows, Git/GitHub, GitLab, Bitbucket, Jira, WinSCP, Apache</div>
       </div>
     </div>
   </section>
 
   <!-- EDUCATION -->
   <section id="education">
-    <div class="section-head">
-      <span class="section-tag">05</span>
+    <div class="section-header">
+      <span class="section-num">05</span>
       <h2>Education</h2>
-      <div class="rule"></div>
+      <div class="section-line"></div>
     </div>
-    <div class="edu-row">
+    <div class="bento-card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div>
-        <div class="edu-name">B.Tech, Computer Science Engineering</div>
-        <div class="edu-sub">SRKR Engineering College (JNTUK), Bhimavaram</div>
+        <div style="font-family: var(--font-display); font-size: 17px; font-weight: 700;">B.Tech in Computer Science Engineering</div>
+        <div style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">SRKR Engineering College (JNTUK), Bhimavaram</div>
       </div>
-      <div class="edu-dates">2019 — 2023</div>
+      <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent);">2019 — 2023</div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="contact-panel">
-      <h2>Let's talk</h2>
-      <p>Open to Cloud &amp; DevOps roles. The fastest way to reach me is email — happy to walk through any of the infra work above in more detail.</p>
-      <div class="contact-links">
-        <a class="contact-btn primary" href="mailto:pksekharreddychinta@gmail.com">Email me</a>
-        <a class="contact-btn" href="https://www.linkedin.com/in/p-k-sekhar-reddy-chinta/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="contact-btn" href="https://github.com/pksekharreddychinta" target="_blank" rel="noopener">GitHub</a>
+    <div class="contact-bento">
+      <h2>Let's build something resilient.</h2>
+      <p>Open to Backend Engineering, Cloud Platform, and DevOps roles. The fastest way to reach me is directly via email.</p>
+      <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+        <a class="btn btn-primary" href="P_K_Sekhar_Reddy_Resume.pdf" download="P_K_Sekhar_Reddy_Resume.pdf">Download Resume 📄</a>
+        <a class="btn btn-secondary" href="mailto:pksekharreddychinta@gmail.com">Email Me Directly</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/p-k-sekhar-reddy-chinta/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-secondary" href="https://github.com/pksekharreddychinta" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
   </section>
@@ -503,7 +566,7 @@
 </main>
 
 <footer>
-  built &amp; deployed via GitHub Actions CI/CD → GitHub Pages
+  Deployed via GitHub Actions CI/CD → GitHub Pages
 </footer>
 
 </body>
