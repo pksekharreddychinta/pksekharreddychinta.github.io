@@ -9,109 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* ---------- RESUME DOWNLOAD MODAL ---------- */
-.resume-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.resume-modal.show {
-  display: flex;
-}
-
-.resume-modal-box {
-  width: 100%;
-  max-width: 400px;
-  background: #0f172a;
-  border: 1px solid var(--card-border);
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-  position: relative;
-}
-
-.resume-modal-box h3 {
-  font-family: var(--font-display);
-  font-size: 21px;
-  margin-bottom: 8px;
-}
-
-.resume-modal-box p {
-  color: var(--text-muted);
-  font-size: 13px;
-  margin-bottom: 22px;
-}
-
-.resume-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.resume-option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid var(--card-border);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-main);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.resume-option:hover {
-  border-color: var(--card-hover-border);
-  background: rgba(96, 165, 250, 0.08);
-  transform: translateY(-1px);
-}
-
-.resume-option-icon {
-  font-size: 22px;
-}
-
-.resume-option-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.resume-option-title {
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.resume-option-subtitle {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
-.resume-close {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  border: none;
-  background: transparent;
-  color: var(--text-muted);
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.resume-close:hover {
-  color: var(--text-main);
-}
     :root {
       --bg: #030712;
       --card-bg: rgba(15, 23, 42, 0.6);
@@ -381,68 +278,6 @@
     }
   </style>
 </head>
-<!-- RESUME DOWNLOAD MODAL -->
-<div id="resumeModal" class="resume-modal">
-  <div class="resume-modal-box">
-
-    <button class="resume-close" onclick="closeResumeModal()" aria-label="Close">
-      &times;
-    </button>
-
-    <h3>Download Resume</h3>
-    <p>Choose the format you'd like to download.</p>
-
-    <div class="resume-options">
-
-      <a
-        class="resume-option"
-        href="P_K_Sekhar_Reddy_Resume.pdf"
-        download="P_K_Sekhar_Reddy_Resume.pdf"
-      >
-        <span class="resume-option-icon">📄</span>
-        <span class="resume-option-text">
-          <span class="resume-option-title">PDF Resume</span>
-          <span class="resume-option-subtitle">Recommended for applications</span>
-        </span>
-      </a>
-
-      <a
-        class="resume-option"
-        href="P_K_Sekhar_Reddy_Resume.docx"
-        download="P_K_Sekhar_Reddy_Resume.docx"
-      >
-        <span class="resume-option-icon">📝</span>
-        <span class="resume-option-text">
-          <span class="resume-option-title">DOCX Resume</span>
-          <span class="resume-option-subtitle">Editable Microsoft Word format</span>
-        </span>
-      </a>
-
-    </div>
-  </div>
-</div>
-
-<script>
-  function openResumeModal() {
-    document.getElementById("resumeModal").classList.add("show");
-  }
-
-  function closeResumeModal() {
-    document.getElementById("resumeModal").classList.remove("show");
-  }
-
-  document.getElementById("resumeModal").addEventListener("click", function(event) {
-    if (event.target === this) {
-      closeResumeModal();
-    }
-  });
-
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-      closeResumeModal();
-    }
-  });
-</script>
 <body>
 
 <div class="bg-canvas"></div>
@@ -476,7 +311,7 @@
           Sole engineer driving <span>Java/Spring Boot REST API development, Razorpay payment processing, and hybrid cloud infrastructure</span> across <span>4 live production platforms</span> — EV charging, travel, and fintech domains.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#" onclick="openResumeModal(); return false;">Download Resume 📄</a>
+          <a class="btn btn-primary" href="P_K_Sekhar_Reddy_Resume.pdf" download="P_K_Sekhar_Reddy_Resume.pdf">Download Resume 📄</a>
           <a class="btn btn-secondary" href="mailto:pksekharreddychinta@gmail.com">Email Me Directly</a>
           <a class="btn btn-secondary" href="https://github.com/pksekharreddychinta" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/p-k-sekhar-reddy-chinta/" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -756,7 +591,7 @@
       <h2>Let's build something resilient.</h2>
       <p>Open to Backend Engineering, Cloud Platform, and DevOps roles. The fastest way to reach me is directly via email.</p>
       <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-        <a class="btn btn-primary" href="#" onclick="openResumeModal(); return false;">Download Resume 📄</a>
+        <a class="btn btn-primary" href="P_K_Sekhar_Reddy_Resume.pdf" download="P_K_Sekhar_Reddy_Resume.pdf">Download Resume 📄</a>
         <a class="btn btn-secondary" href="mailto:pksekharreddychinta@gmail.com">Email Me Directly</a>
         <a class="btn btn-secondary" href="https://www.linkedin.com/in/p-k-sekhar-reddy-chinta/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a class="btn btn-secondary" href="https://github.com/pksekharreddychinta" target="_blank" rel="noopener">GitHub ↗</a>
